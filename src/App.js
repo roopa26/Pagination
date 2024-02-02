@@ -20,7 +20,7 @@ function App() {
                     setTableData(res);
                     setDisplayData(res.slice(0,10))
                   })
-                  .catch((ex)=>console.log(ex))
+                  .catch((ex)=>alert('failed to fetch data'))
   },[]);
 
   const returnPageNumberAsParam = (currentPage)=>{
@@ -44,13 +44,17 @@ function App() {
 
   return (
     <div>
+      <h1>Employee Data Table</h1>
       <table style={{margin:'10px', padding:'5px'}}>
+      <thead>
         <tr style={row}>
           <th style={colHeader}>ID</th>
           <th style={colHeader}>Name</th>
           <th style={colHeader}>Email</th>
           <th style={colHeader}>Role</th>
         </tr>
+        </thead>
+        <tbody>
         {displayData.map((item)=>
           (<tr>
             <td>{item.id}</td>
@@ -59,6 +63,7 @@ function App() {
             <td>{item.role}</td>
           </tr>)
         )}
+        </tbody>
       </table>
       <Pagination returnPageNumberAsParam={returnPageNumberAsParam} lengthOfTableData={tableData?.length}/>
     </div>
