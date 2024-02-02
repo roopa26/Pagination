@@ -1,0 +1,18 @@
+.btn{
+    background-color: var(--Green);
+    color: var(--White);
+    width:100px;
+    height: 40px;
+    border-radius: 8px;
+    display: inline;
+    margin: 10px;
+}
+
+.pageNo{
+    width:100px !important;
+    height: 40px;
+    background-color: var(--Green);
+    color: var(--White);
+    border-radius: 8px;
+    display: inline;
+}
